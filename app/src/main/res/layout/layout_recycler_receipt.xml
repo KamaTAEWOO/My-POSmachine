@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#F6DC8D"
+    app:cardElevation="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="①"
+            android:textColor="#334669"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/recycler_room_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="몇번방 입니다."
+            android:textColor="#334669"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="②"
+            android:textColor="#334669"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/recycler_room_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총금액입니다."
+            android:textColor="#334669"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="60dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="③"
+            android:textColor="#334669"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/recycler_room_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="결제방법입니다."
+            android:textColor="#334669"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="④"
+            android:textColor="#334669"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/recycler_room_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜"
+            android:textColor="#334669"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

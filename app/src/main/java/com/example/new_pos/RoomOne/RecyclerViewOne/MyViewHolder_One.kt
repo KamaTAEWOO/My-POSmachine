@@ -1,0 +1,36 @@
+package com.example.new_pos.RoomOne.RecyclerViewOne
+
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.layout_recycler_receipt.view.*
+
+//커스텀
+class MyViewHolder_One(itemView: View): RecyclerView.ViewHolder(itemView)
+
+{
+
+
+    // val TAG: String = "로그"
+
+    val RecyclerRoomNumber = itemView.recycler_room_number
+    val recycler_room_price = itemView.recycler_room_price
+    val recycler_room_method = itemView.recycler_room_method
+    val recycler_room_date = itemView.recycler_room_date
+
+    init {
+        // Log.d(TAG, "MyViewHolder - init() called")
+
+    }
+
+
+
+    //데이터와 뷰를 묶는다. -> 뷰랑 데이터 연결부분
+    fun bind(myModelOne: Myreceipt_One){
+        //Log.d(TAG, "MyViewHolder - bind() called")
+        recycler_room_date.text=myModelOne.dateroom
+        RecyclerRoomNumber.text = myModelOne.roomnameOne + "번 방입니다."
+        recycler_room_price.text=myModelOne.roomtotalOne
+        recycler_room_method.text=myModelOne.roommethodOne
+    }
+
+}

@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu"
+    android:orientation="vertical"
+    tools:context=".RoomOne.RoomOne_OrderSelect">
+
+    //움직이지 않음
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주문을 선택해주세요."
+            android:textColor="#060A12"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="총 금액은  "
+                android:textStyle="bold"
+                android:textColor="#09101E"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/Total_One_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="얼마?"
+                android:layout_weight="2.6"
+                android:textColor="#2846EC"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/price_next_One_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="0.3"
+                android:text="계산버튼"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    //화면 움직임
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        //방종류
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            //방크기
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="방 종류"
+                android:textStyle="bold"
+                android:textColor="#2846EC"
+                android:textSize="30sp"
+                />
+
+
+
+            //작은방
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="작은 방"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/small_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/small_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //중간방
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="중간 방"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mcount_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/middle_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/middle_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/mprice_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            //큰방
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="큰     방"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Big_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/Big_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/Big_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/Big_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+        //주류
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            //주류
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="주    류"
+                android:textStyle="bold"
+                android:textColor="#2846EC"
+                android:textSize="30sp"
+                />
+
+
+
+            //소주
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="소     주"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/soju_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/soju_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/soju_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/soju_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //맥주 캔
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="맥주 캔"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/can_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/can_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/can_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/can_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //맥주 피쳐
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="맥주피쳐"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/heaver_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/heaver_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/heaver_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/heaver_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //음료수
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="음 료 수"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/drink_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/drink_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/drink_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/drink_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+            //안주
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            //안주
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="안    주"
+                android:textStyle="bold"
+                android:textColor="#2846EC"
+                android:textSize="30sp"
+                />
+
+
+
+            //과일
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="과     일"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fruit_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/fruit_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/fruit_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/fruit_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //마른안주
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마른안주"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/thin_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/thin_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/thin_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/thin_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //오징어
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오 징 어"
+                    android:textColor="#F7090E17"
+                    android:textSize="25sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/squid_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/squid_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/squid_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/squid_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //육포@대구포
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="육포@대구포"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/beef_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/beef_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/beef_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/beef_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        //세트
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            //세트
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="세    트"
+                android:textStyle="bold"
+                android:textColor="#2846EC"
+                android:textSize="30sp"
+                />
+
+
+
+            //양주세트
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="양주세트"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/liquor_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/liquor_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/liquor_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/liquor_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //어시스트 1명
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트1명"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_one_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_one_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_one_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_one_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //어시스트 2명
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트2명"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_two_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_two_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_two_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_two_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //어시스트 3명
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트3명"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_three_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_three_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_three_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_three_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //어시스트 4명
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트4명"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_for_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_for_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_for_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_for_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            //어시스트 5명
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트4명"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_five_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_five_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_five_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_five_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        //기타
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            //기타
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="기    타"
+                android:textStyle="bold"
+                android:textColor="#2846EC"
+                android:textSize="30sp"
+                />
+
+
+
+            //어시스트
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트"
+                    android:textColor="#F7090E17"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            //어시스트 and 안주
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어시스트and안주"
+                    android:textColor="#F7090E17"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assist_snack_count_tv"
+                    android:textColor="#020915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/assist_snack_add_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/button"
+                    android:layout_marginBottom="5dp"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/assist_snack_del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="0.1"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/assist_snack_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:text="가격"
+                    android:textColor="#040810"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
