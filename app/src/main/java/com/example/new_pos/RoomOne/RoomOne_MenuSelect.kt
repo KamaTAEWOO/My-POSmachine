@@ -40,12 +40,6 @@ class RoomOne_MenuSelect : AppCompatActivity() {
 
 
 
-
-
-
-
-
-
 //처음에 주문버튼은 무조건 눌려야함
         order_One_btn.setOnClickListener {
             val orderOneIntent = Intent(this, RoomOne_OrderSelect::class.java)

@@ -84,6 +84,7 @@ class Calender : AppCompatActivity() {
             //날짜를 저장한다.
             PreferenceUtil.setString("today", "$date")
             startActivity(selectedDates)
+            finish()
         }
 
 

@@ -3,12 +3,9 @@ package com.example.new_pos.RoomOne
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.new_pos.Calender
 import com.example.new_pos.R
 import com.example.new_pos.RoomOne.RecyclerViewOne.Myreceipt_One
-import com.example.new_pos.Shared.MyApplication
 import com.example.new_pos.Shared.PreferenceUtil
-import kotlinx.android.synthetic.main.activity_room_assignment.*
 import kotlinx.android.synthetic.main.activity_room_one__receipt.*
 
 class RoomOne_Receipt : AppCompatActivity() {
@@ -102,8 +99,6 @@ class RoomOne_Receipt : AppCompatActivity() {
 
             //3.모두 저장해버린다.
             PreferenceUtil.setReceiptList(storedReceiptList)
-
-
 
 
 
