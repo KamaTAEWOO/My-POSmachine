@@ -6,9 +6,12 @@
 
 ### 1. 첫 화면
 ![KakaoTalk_20220330_002046335_04](https://user-images.githubusercontent.com/48404941/160723222-dcf014f3-b4b0-40a9-a242-74fb81c5d891.jpg)
+- 사용자가 어플 실행 시 3초간 볼 화면 입니다.
+- 어플의 이름이 담겨져 있는 화면 입니다.
 
 ### 2. 캘린더 화면
 ![KakaoTalk_20220330_002216308_02](https://user-images.githubusercontent.com/48404941/160723321-f96bce8a-0025-46d1-80d4-838223a8021a.jpg)
+- 
 
 ### 3. Room 선택 화면
 ![KakaoTalk_20220330_002241944](https://user-images.githubusercontent.com/48404941/160723344-0e50911a-3921-4d52-8890-f72dc5c0cf96.jpg)
